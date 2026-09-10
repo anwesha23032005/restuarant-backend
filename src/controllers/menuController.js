@@ -72,7 +72,10 @@ const createMenuItem = async (req, res) => {
 
     if (req.file && req.file.path) {
       // Image file uploaded via Multer + Cloudinary
-      imageUrl =req.file.path;
+      const HOST = process.env.NODE_ENV === 'production' 
+        ? 'https://restuarant-backend-r13w.onrender.com' 
+        : 'http://localhost:5000';
+      imageUrl = `${HOST}/${req.file.path}`;
     } else if (req.body && req.body.Image) {
       // Direct image URL string passed (e.g., external API image link)
       imageUrl = req.body.Image;
