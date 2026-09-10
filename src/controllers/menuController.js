@@ -72,7 +72,7 @@ const createMenuItem = async (req, res) => {
 
     if (req.file && req.file.path) {
       // Image file uploaded via Multer + Cloudinary
-      imageUrl =`http://localhost:5000/uploads/${req.file.filename}`;
+      imageUrl =req.file.filename;
     } else if (req.body && req.body.Image) {
       // Direct image URL string passed (e.g., external API image link)
       imageUrl = req.body.Image;
