@@ -15,7 +15,7 @@ const importData = async () => {
 
     // Fetch meals from TheMealDB API
     const response = await axios.get(
-      'https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian'
+      'https://www.themealdb.com/api/json/v1/1/filter.php?a=India'
     );
 
     const meals = response.data.meals;
